@@ -1,4 +1,4 @@
-package com.videominer.dailymotion;
+package aiss.dailymotionminer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
