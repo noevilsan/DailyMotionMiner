@@ -1,34 +1,23 @@
-
 package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "name",
-    "user_link",
-    "picture_link"
-})
-@Generated("jsonschema2pojo")
 public class DailymotionUser {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("name")
+
+    @JsonProperty("screenname") // Dailymotion devuelve el nombre aquí
     private String name;
-    @JsonProperty("user_link")
-    private String userLink;
-    @JsonProperty("picture_link")
+
+    @JsonProperty("avatar_240_url") // Esta es la URL de la foto en Dailymotion
     private String pictureLink;
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -42,32 +31,22 @@ public class DailymotionUser {
         this.id = id;
     }
 
-    @JsonProperty("name")
+    @JsonProperty("screenname")
     public String getName() {
         return name;
     }
 
-    @JsonProperty("name")
+    @JsonProperty("screenname")
     public void setName(String name) {
         this.name = name;
     }
 
-    @JsonProperty("user_link")
-    public String getUserLink() {
-        return userLink;
-    }
-
-    @JsonProperty("user_link")
-    public void setUserLink(String userLink) {
-        this.userLink = userLink;
-    }
-
-    @JsonProperty("picture_link")
+    @JsonProperty("avatar_240_url")
     public String getPictureLink() {
         return pictureLink;
     }
 
-    @JsonProperty("picture_link")
+    @JsonProperty("avatar_240_url")
     public void setPictureLink(String pictureLink) {
         this.pictureLink = pictureLink;
     }
@@ -81,5 +60,4 @@ public class DailymotionUser {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-
 }

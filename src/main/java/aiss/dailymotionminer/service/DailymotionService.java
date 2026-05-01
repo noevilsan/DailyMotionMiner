@@ -56,33 +56,33 @@ public class DailymotionService {
     }
 
     private List<Video> mapVideos(String userId, Integer maxVideos, String authorName) {
-        // Pedimos la pagina 1 por defecto para sacar la lista inicial
         DailymotionVideoList dmVideoList = getVideosFromUser(userId, maxVideos, 1);
         List<Video> videos = new ArrayList<>();
 
         if (dmVideoList != null && dmVideoList.getList() != null) {
             for (DailymotionVideo dmVideo : dmVideoList.getList()) {
-                videos.add(this.buildVideo(dmVideo, authorName));
+                // Ahora esta línea dejará de estar roja porque el método de abajo ya acepta 3 cosas
+                videos.add(this.buildVideo(dmVideo, authorName, userId));
             }
         }
         return videos;
     }
 
-    private Video buildVideo(DailymotionVideo dmVideo, String authorName) {
+    // HEMOS AÑADIDO: ", String userId" al final de los paréntesis
+    private Video buildVideo(DailymotionVideo dmVideo, String authorName, String userId) {
         Video video = new Video();
         video.setId(dmVideo.getId());
-        video.setName(dmVideo.getName()); // Asumo que en DailymotionVideo mapeaste "title" a la propiedad name. Si no, usa getTitle()
+        video.setName(dmVideo.getName());
         video.setDescription(dmVideo.getDescription());
-
-        // Pasamos el timestamp a String si viene informado
         video.setReleaseTime(dmVideo.getReleaseTime() != null ? dmVideo.getReleaseTime().toString() : null);
 
-        // El autor es el mismo para todos los videos de esta tanda
         User author = new User();
         author.setName(authorName);
-        video.setAuthor(author);
 
-        // Dejamos las listas vacías listas para evitar NullPointerExceptions luego
+        // Ahora sí podemos usar el userId para construir el link sin errores
+        author.setUser_link("https://www.dailymotion.com/" + userId);
+
+        video.setAuthor(author);
         video.setComments(new ArrayList<>());
         video.setCaptions(new ArrayList<>());
 

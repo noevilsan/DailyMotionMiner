@@ -1,15 +1,14 @@
 package aiss.dailymotionminer.controller;
 
-import aiss.dailymotionminer.model.dailymotionminer.DailymotionChannel;
+import aiss.dailymotionminer.model.videominer.Channel; // Importante: usamos el modelo de VideoMiner
 import aiss.dailymotionminer.service.DailymotionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/dailymotion")
+@RequestMapping("/dailymotionminer") // Cambiado para que coincida con Postman
 public class DailymotionController {
-    
+
     private final DailymotionService dailymotionService;
 
     @Autowired
@@ -17,11 +16,14 @@ public class DailymotionController {
         this.dailymotionService = dailymotionService;
     }
 
-    @PostMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
-    public DailymotionChannel createChannel(@PathVariable String id, 
-            @RequestParam(defaultValue = "10", required = false) int maxVideos, 
-            @RequestParam(defaultValue = "2", required = false) Integer maxPages){
-        return dailymotionService.getChannel(id);
+    // Cambiado a GET y añadida la ruta /channel
+    @GetMapping("/channel/{id}")
+    public Channel getChannel(
+            @PathVariable String id,
+            @RequestParam(defaultValue = "10", required = false) Integer maxVideos,
+            @RequestParam(defaultValue = "10", required = false) Integer maxComments){ // Cambié maxPages por maxComments para que coincida con tu Service
+
+        // Llamamos a buildChannel para que orqueste todo y te devuelva el canal completo
+        return dailymotionService.buildChannel(id, maxVideos, maxComments);
     }
 }

@@ -1,34 +1,29 @@
-
 package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "name",
-    "description",
-    "createdTime"
-})
-@Generated("jsonschema2pojo")
 public class DailymotionChannel {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("name")
+
+    @JsonProperty("screenname")
     private String name;
+
     @JsonProperty("description")
     private String description;
-    @JsonProperty("createdTime")
+
+    @JsonProperty("created_time")
     private Integer createdTime;
+
+    @JsonProperty("avatar_240_url") // <--- EL BOLSILLO NUEVO
+    private String pictureLink;
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -42,12 +37,12 @@ public class DailymotionChannel {
         this.id = id;
     }
 
-    @JsonProperty("name")
+    @JsonProperty("screenname")
     public String getName() {
         return name;
     }
 
-    @JsonProperty("name")
+    @JsonProperty("screenname")
     public void setName(String name) {
         this.name = name;
     }
@@ -62,14 +57,24 @@ public class DailymotionChannel {
         this.description = description;
     }
 
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     public Integer getCreatedTime() {
         return createdTime;
     }
 
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     public void setCreatedTime(Integer createdTime) {
         this.createdTime = createdTime;
+    }
+
+    @JsonProperty("avatar_240_url")
+    public String getPictureLink() {
+        return pictureLink;
+    }
+
+    @JsonProperty("avatar_240_url")
+    public void setPictureLink(String pictureLink) {
+        this.pictureLink = pictureLink;
     }
 
     @JsonAnyGetter
@@ -81,5 +86,4 @@ public class DailymotionChannel {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-
 }

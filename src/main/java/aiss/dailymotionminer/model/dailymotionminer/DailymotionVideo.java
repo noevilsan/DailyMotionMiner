@@ -1,34 +1,27 @@
-
 package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "name",
-    "description",
-    "releaseTime"
-})
-@Generated("jsonschema2pojo")
+
 public class DailymotionVideo {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("name")
+
+    @JsonProperty("title") // Dailymotion lo llama "title"
     private String name;
+
     @JsonProperty("description")
     private String description;
-    @JsonProperty("releaseTime")
+
+    @JsonProperty("created_time") // Dailymotion lo llama "created_time"
     private Integer releaseTime;
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -42,12 +35,12 @@ public class DailymotionVideo {
         this.id = id;
     }
 
-    @JsonProperty("name")
+    @JsonProperty("title")
     public String getName() {
         return name;
     }
 
-    @JsonProperty("name")
+    @JsonProperty("title")
     public void setName(String name) {
         this.name = name;
     }
@@ -62,27 +55,14 @@ public class DailymotionVideo {
         this.description = description;
     }
 
-    @JsonProperty("releaseTime")
+    @JsonProperty("created_time")
     public Integer getReleaseTime() {
         return releaseTime;
     }
 
-    @JsonProperty("releaseTime")
+    @JsonProperty("created_time")
     public void setReleaseTime(Integer releaseTime) {
         this.releaseTime = releaseTime;
-    }
-
-    @JsonProperty("tags")
-    private java.util.List<String> tags;
-
-    @JsonProperty("tags")
-    public java.util.List<String> getTags() {
-        return tags;
-    }
-
-    @JsonProperty("tags")
-    public void setTags(java.util.List<String> tags) {
-        this.tags = tags;
     }
 
     @JsonAnyGetter
@@ -94,5 +74,4 @@ public class DailymotionVideo {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-
 }
