@@ -1,5 +1,5 @@
 
-package DailymotionVideoList;
+package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -19,17 +19,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class DailymotionVideoList {
 
     @JsonProperty("list")
-    private java.util.List<DailymotionVideoList.List> list;
+    private java.util.List<DailymotionVideoList> list;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("list")
-    public java.util.List<DailymotionVideoList.List> getList() {
+    public java.util.List<DailymotionVideoList> getList() {
         return list;
     }
 
     @JsonProperty("list")
-    public void setList(java.util.List<DailymotionVideoList.List> list) {
+    public void setList(java.util.List<DailymotionVideoList> list) {
         this.list = list;
     }
 

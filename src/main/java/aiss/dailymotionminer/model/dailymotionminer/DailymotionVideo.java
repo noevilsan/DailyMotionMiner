@@ -72,6 +72,19 @@ public class DailymotionVideo {
         this.releaseTime = releaseTime;
     }
 
+    @JsonProperty("tags")
+    private java.util.List<String> tags;
+
+    @JsonProperty("tags")
+    public java.util.List<String> getTags() {
+        return tags;
+    }
+
+    @JsonProperty("tags")
+    public void setTags(java.util.List<String> tags) {
+        this.tags = tags;
+    }
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
