@@ -14,20 +14,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
-    "name",
+    "screenname",
     "description",
-    "createdTime"
+    "created_time"
 })
 @Generated("jsonschema2pojo")
 public class DailymotionChannel {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("screenname")
+    private String screenName;
     @JsonProperty("description")
     private String description;
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     private Integer createdTime;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
@@ -42,14 +42,14 @@ public class DailymotionChannel {
         this.id = id;
     }
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("screenname")
+    public String getScreenName() {
+        return screenName;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("screenname")
+    public void setScreenName(String screenName) {
+        this.screenName = screenName;
     }
 
     @JsonProperty("description")
@@ -62,12 +62,12 @@ public class DailymotionChannel {
         this.description = description;
     }
 
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     public Integer getCreatedTime() {
         return createdTime;
     }
 
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     public void setCreatedTime(Integer createdTime) {
         this.createdTime = createdTime;
     }

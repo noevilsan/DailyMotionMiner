@@ -19,17 +19,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class DailymotionVideoList {
 
     @JsonProperty("list")
-    private java.util.List<DailymotionVideoList> list;
+    private java.util.List<DailymotionVideo> list;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("list")
-    public java.util.List<DailymotionVideoList> getList() {
+    public java.util.List<DailymotionVideo> getList() {
         return list;
     }
 
     @JsonProperty("list")
-    public void setList(java.util.List<DailymotionVideoList> list) {
+    public void setList(java.util.List<DailymotionVideo> list) {
         this.list = list;
     }
 

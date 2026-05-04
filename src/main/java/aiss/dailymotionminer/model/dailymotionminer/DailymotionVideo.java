@@ -2,6 +2,7 @@
 package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -14,22 +15,24 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
-    "name",
+    "title",
     "description",
-    "releaseTime"
+    "created_time",
+    "tags"
 })
 @Generated("jsonschema2pojo")
 public class DailymotionVideo {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("title")
+    private String title;
     @JsonProperty("description")
     private String description;
-    @JsonProperty("releaseTime")
-    private Integer releaseTime;
-    @JsonIgnore
+    @JsonProperty("created_time")
+    private Integer createdTime;
+    @JsonProperty("tags")
+    private List<String> tags;
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("id")
@@ -42,14 +45,14 @@ public class DailymotionVideo {
         this.id = id;
     }
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("title")
+    public String getTitle() {
+        return title;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("title")
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @JsonProperty("description")
@@ -62,26 +65,23 @@ public class DailymotionVideo {
         this.description = description;
     }
 
-    @JsonProperty("releaseTime")
-    public Integer getReleaseTime() {
-        return releaseTime;
+    @JsonProperty("created_time")
+    public Integer getCreatedTime() {
+        return createdTime;
     }
 
-    @JsonProperty("releaseTime")
-    public void setReleaseTime(Integer releaseTime) {
-        this.releaseTime = releaseTime;
+    @JsonProperty("created_time")
+    public void setCreatedTime(Integer createdTime) {
+        this.createdTime = createdTime;
     }
 
     @JsonProperty("tags")
-    private java.util.List<String> tags;
-
-    @JsonProperty("tags")
-    public java.util.List<String> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
     @JsonProperty("tags")
-    public void setTags(java.util.List<String> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 

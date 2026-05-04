@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
-    "link",
+    "url",
     "language"
 })
 @Generated("jsonschema2pojo")
@@ -22,8 +22,8 @@ public class DailymotionCaption {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("link")
-    private String link;
+    @JsonProperty("url")
+    private String url;
     @JsonProperty("language")
     private String language;
     @JsonIgnore
@@ -39,14 +39,14 @@ public class DailymotionCaption {
         this.id = id;
     }
 
-    @JsonProperty("link")
-    public String getLink() {
-        return link;
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
     }
 
-    @JsonProperty("link")
-    public void setLink(String link) {
-        this.link = link;
+    @JsonProperty("url")
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @JsonProperty("language")

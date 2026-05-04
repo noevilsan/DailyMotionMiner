@@ -1,4 +1,5 @@
 
+
 package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
@@ -14,21 +15,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
-    "name",
-    "user_link",
-    "picture_link"
+    "screenname",
+    "url",
+    "avatar_720_url"
 })
 @Generated("jsonschema2pojo")
 public class DailymotionUser {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("user_link")
-    private String userLink;
-    @JsonProperty("picture_link")
-    private String pictureLink;
+    @JsonProperty("screenname")
+    private String screenname;
+    @JsonProperty("url")
+    private String url;
+    @JsonProperty("avatar_720_url")
+    private String avatar720Url;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -42,34 +43,34 @@ public class DailymotionUser {
         this.id = id;
     }
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("screenname")
+    public String getScreenname() {
+        return screenname;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("screenname")
+    public void setScreenname(String screenname) {
+        this.screenname = screenname;
     }
 
-    @JsonProperty("user_link")
-    public String getUserLink() {
-        return userLink;
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
     }
 
-    @JsonProperty("user_link")
-    public void setUserLink(String userLink) {
-        this.userLink = userLink;
+    @JsonProperty("url")
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    @JsonProperty("picture_link")
-    public String getPictureLink() {
-        return pictureLink;
+    @JsonProperty("avatar_720_url")
+    public String getAvatar720Url() {
+        return avatar720Url;
     }
 
-    @JsonProperty("picture_link")
-    public void setPictureLink(String pictureLink) {
-        this.pictureLink = pictureLink;
+    @JsonProperty("avatar_720_url")
+    public void setAvatar720Url(String avatar720Url) {
+        this.avatar720Url = avatar720Url;
     }
 
     @JsonAnyGetter
