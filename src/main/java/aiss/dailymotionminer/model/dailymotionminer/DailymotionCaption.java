@@ -1,5 +1,5 @@
 
-package aiss.dailymotionminer.model;
+package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

@@ -17,13 +17,13 @@ public class DailymotionController {
     }
 
     // Cambiado a GET y añadida la ruta /channel
-    @GetMapping("/channel/{id}")
+    @GetMapping("/channel/{name}")
     public Channel getChannel(
-            @PathVariable String id,
+            @PathVariable String name,
             @RequestParam(defaultValue = "10", required = false) Integer maxVideos,
             @RequestParam(defaultValue = "10", required = false) Integer maxComments){ // Cambié maxPages por maxComments para que coincida con tu Service
 
         // Llamamos a buildChannel para que orqueste todo y te devuelva el canal completo
-        return dailymotionService.buildChannel(id, maxVideos, maxComments);
+        return dailymotionService.buildChannel(name, maxVideos, maxComments);
     }
 }
