@@ -1,4 +1,3 @@
-
 package aiss.dailymotionminer.model.dailymotionminer;
 
 import java.util.LinkedHashMap;
@@ -13,19 +12,22 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "url",
-    "language"
+        "id",
+        "url",
+        "language"
 })
 @Generated("jsonschema2pojo")
 public class DailymotionCaption {
 
     @JsonProperty("id")
     private String id;
+
     @JsonProperty("url")
     private String url;
+
     @JsonProperty("language")
     private String language;
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 

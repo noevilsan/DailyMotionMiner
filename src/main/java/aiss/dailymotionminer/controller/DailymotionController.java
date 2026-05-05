@@ -1,5 +1,6 @@
 package aiss.dailymotionminer.controller;
 
+import aiss.dailymotionminer.etl.transformer;
 import aiss.dailymotionminer.model.videominer.Channel; // Importante: usamos el modelo de VideoMiner
 import aiss.dailymotionminer.service.DailymotionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class DailymotionController {
     public Channel getChannel(
             @PathVariable String name,
             @RequestParam(defaultValue = "10", required = false) Integer maxVideos,
-            @RequestParam(defaultValue = "10", required = false) Integer maxComments){ // Cambié maxPages por maxComments para que coincida con tu Service
+            @RequestParam(defaultValue = "10", required = false) Integer maxComments){
 
-        // Llamamos a buildChannel para que orqueste todo y te devuelva el canal completo
-        return dailymotionService.buildChannel(name, maxVideos, maxComments);
+        // CORRECCIÓN: Pasamos 'dailymotionService' como cuarto parámetro
+        return transformer.buildChannel(name, maxVideos, maxComments, dailymotionService);
     }
 }
