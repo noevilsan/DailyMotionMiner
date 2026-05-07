@@ -17,7 +17,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "title",
         "description",
         "created_time",
-        "tags"
+        "tags",
+        "subtitles_urls"
 })
 @Generated("jsonschema2pojo")
 public class DailymotionVideo {
@@ -32,6 +33,8 @@ public class DailymotionVideo {
     private Integer createdTime;
     @JsonProperty("tags")
     private List<String> tags;
+    @JsonProperty("subtitles_urls")
+    private Map<String, String> subtitlesUrls;
 
     // AQUÍ ESTÁ LA CLAVE DE TU COMPAÑERO
 
@@ -62,6 +65,11 @@ public class DailymotionVideo {
     public List<String> getTags() { return tags; }
     @JsonProperty("tags")
     public void setTags(List<String> tags) { this.tags = tags; }
+
+    @JsonProperty("subtitles_urls")
+    public Map<String, String> getSubtitlesUrls() { return subtitlesUrls; }
+    @JsonProperty("subtitles_urls")
+    public void setSubtitlesUrls(Map<String, String> subtitlesUrls) { this.subtitlesUrls = subtitlesUrls; }
 
 
     @JsonAnyGetter
